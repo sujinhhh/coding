@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bar-container">
+      <div class="bar" />
+    </div>
+    <button onclick="fillbar(1)">Start</button>
+
+    <!-- ******* 솔루션 2 -->
+    <script>
+      function fillbar(seconds) {
+        const bar = document.querySelector(".bar");
+        bar.style.transition = `${seconds}s linear width`;
+        bar.style.width = "100%";
+      }
+    </script>
+
+    <!-- *****  솔루션 1 -->
+    <!-- <script>
+      function fillbar(seconds) {
+        console.log("clicked");
+        const bar = document.querySelector(".bar");
+        let atPercent = 0;
+        const interaval = setInterval(() => {
+          bar.style.width = atPercent + "%";
+          console.log("running at", atPercent++);
+          if (atPercent >= 100) {
+            clearInterval(interaval);
+          }
+        }, (seconds * 1000) / 100);
+      }
+    </script> -->
+
+    <style>
+      .bar-container {
+        width: 200px;
+        height: 30px;
+        margin: 40px;
+        background-color: gray;
+      }
+      .bar {
+        background-color: blueviolet;
+        height: 100%;
+        width: 0%;
+      }
+    </style>
+  </body>
+</html>

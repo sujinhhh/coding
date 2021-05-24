@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .progress-contanier {
+      width: 80vw;
+      height: 100px;
+      background-color: black;
+    }
+    .bar {
+      width: 0%;
+      height: 100%;
+      background-color: brown;
+    }
+  </style>
+  <body>
+    <div class="progress-contanier">
+      <div class="bar"></div>
+      <input type="number" />
+      <button class="btn" onclick="progress(5)">Start</button>
+    </div>
+    <script>
+      const char = "dkgjlgjlkjdng";
+      function maxChar(str) {
+        let obj = {};
+        for (let newChar of str) {
+          obj[newChar] ? obj[newChar]++ : (obj[newChar] = 1);
+        }
+
+        let maxNum = 0;
+        let mexChar = "";
+        for (let newObj in obj) {
+          if (obj[newObj] > maxNum) {
+            mexChar = newObj;
+            maxNum = obj[newObj];
+          }
+          return maxNum === obj[newObj];
+        }
+      }
+    </script>
+  </body>
+</html>
