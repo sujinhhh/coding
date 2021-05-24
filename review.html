@@ -15,30 +15,25 @@
       width: 0%;
       height: 100%;
       background-color: brown;
+      color: wheat;
+    }
+    .read {
+      color: aliceblue;
     }
   </style>
   <body>
     <div class="progress-contanier">
-      <div class="bar"></div>
+      <article class="article"><p>gahaha</p></article>
+      <article class="article"><p>hehe</p></article>
+      <article class="article"><p>hosos</p></article>
       <input type="number" />
-      <button class="btn" onclick="progress(5)">Start</button>
+      <button class="btn" onclick="haha()">Start</button>
     </div>
     <script>
-      const char = "dkgjlgjlkjdng";
-      function maxChar(str) {
-        let obj = {};
-        for (let newChar of str) {
-          obj[newChar] ? obj[newChar]++ : (obj[newChar] = 1);
-        }
-
-        let maxNum = 0;
-        let mexChar = "";
-        for (let newObj in obj) {
-          if (obj[newObj] > maxNum) {
-            mexChar = newObj;
-            maxNum = obj[newObj];
-          }
-          return maxNum === obj[newObj];
+      const articles = document.querySelectorAll("article>p");
+      function haha() {
+        for (const para of articles) {
+          para.classList.add("read");
         }
       }
     </script>

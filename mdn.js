@@ -1,16 +1,18 @@
-let fruits = ['Apple', 'Banana']
+const IsUnique = (str) => {
+  let obj = {};
+  for (let i of str) {
+    !obj[i] ? (obj[i] = 1) : obj[i]++;
+  }
 
+  let uniquChar = "";
+  for (let i in obj) {
+    if (obj[i] === 1) uniquChar += `${i} `;
+  }
+  console.log(uniquChar);
 
-fruits.pop()
-console.log(fruits);
+  console.log(uniquChar ? `true, unique char is ${uniquChar}` : "false");
+};
 
-
-const num = [1, 2, 3, 4, 5, 6, 7, 8];
-
-function multiArr(arr){
-    let newArray = Array.from(arr, x=>x*x)
-    console.log(newArray);
-     
-}
-
-multiArr(num)
+console.log({
+  IsUnique: IsUnique("223344"),
+});

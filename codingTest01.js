@@ -103,15 +103,16 @@ console.log(myArray);
 
 // pagination
 
-function chunk(arr, n) {
-  const newItem = Array.from({ length: n }, (_, index) => {
-    const start = index * n;
-    const tempItems = arr.slice(start, start + n);
-    return tempItems;
+const num2 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+const newArray = (arr, n) =>
+  Array.from({ length: n }, (_, index) => {
+    let start = index * n;
+    let tempItem = arr.slice(start, start + n);
+    return tempItem;
   });
-  return newItem;
-}
-console.log(chunk(num, 3));
+
+console.log(newArray(num2, 3));
 
 //  배열 수 셈해서 리턴하기
 
