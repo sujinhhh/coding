@@ -73,13 +73,31 @@ palindrome
 //   for (let arr in numberArr) {
 //     if(numberArr[arr]>=maxNum){
 //       maxNum = numberArr[arr]
-//       maxChar = numberArr
+//       maxChar = arr
 //     }
 //   }
 //   console.log(`${maxNum}:${maxChar}`);
 // };
 
 // number(numbers);
+
+const number = (num) => {
+  let numberArr = [];
+  for (let arr of num)
+    !numberArr[arr] ? (numberArr[arr] = 1) : numberArr[arr]++;
+
+  let maxNum = 0;
+  let maxChar = "";
+  for (let arr in numberArr) {
+    if (numberArr[arr] >= maxNum) {
+      maxNum = numberArr[arr];
+      maxChar = arr;
+    }
+  }
+  return `${maxNum}:${maxChar}`;
+};
+
+console.log(number("Iamaprogrammer"));
 
 const num = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -100,6 +118,10 @@ console.log(myArray);
 //   }
 // }
 // chunk(num, 3);
+
+// 7. Write a function ‘chunk(arr, n)’ that returns a chunked array of size n at the least.
+// Eg:  given, [ 1, 4, 14,2,5,6,3] ,n=3
+// Return [1,4,14][2,5,6] [3]
 
 // pagination
 
@@ -122,3 +144,23 @@ function multiArr(arr) {
 }
 
 multiArr(num);
+
+// 특정 글자 찾기 ************
+
+function getCount(str) {
+  var vowelsCount = 0;
+  vowels = str.match(/[aeiou]/g || []).length;
+  console.log(vowels);
+}
+
+getCount("abracadabrai");
+
+// 6, Write a function that removes odd numbers from an array of numbers
+
+// const num2 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// function removeOdd (num) {
+//   return  num.filter((item)=>item % 2 === 0)
+// }
+
+// console.log(removeOdd(num2));

@@ -11,7 +11,7 @@
       <ul class="list-group">
         <div class="list-item">js course <span class="float">$10</span></div>
       </ul>
-      <button>Sort course</button>
+      <button class="btn">Sort course</button>
     </div>
     <script>
       const course = [
@@ -34,11 +34,31 @@
       ];
       function generateList() {
         const ul = document.querySelector(".list-group");
+        ul.innerHTML = "";
         course.forEach((item) => {
           const li = document.createElement("p");
+          li.classList.add("list-item");
+
+          const name = document.createTextNode(item.name);
+          li.appendChild(name);
+
+          const span = document.createElement("span");
+          span.classList.add("float");
+          li.appendChild(span);
+
+          const price = document.createTextNode("$" + item.price);
+          span.appendChild(price);
+
+          ul.appendChild(li);
         });
       }
-      generateList();
+      window.addEventListener("load", generateList);
+
+      const button = document.querySelector(".btn");
+      button.addEventListener("click", () => {
+        course.sort((a, b) => a.price - b.price);
+        generateList();
+      });
     </script>
   </body>
 </html>

@@ -4,37 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .bar-container {
+        width: 80%;
+        height: 20px;
+        background-color: aqua;
+      }
+      .bar {
+        width: 0%;
+        height: 100%;
+        background-color: blueviolet;
+      }
+    </style>
   </head>
-  <style>
-    .progress-contanier {
-      width: 80vw;
-      height: 100px;
-      background-color: black;
-    }
-    .bar {
-      width: 0%;
-      height: 100%;
-      background-color: brown;
-      color: wheat;
-    }
-    .read {
-      color: aliceblue;
-    }
-  </style>
+  <div class="bar-container">
+    <div class="bar"></div>
+  </div>
+  <button onclick="progress(3)">start</button>
   <body>
-    <div class="progress-contanier">
-      <article class="article"><p>gahaha</p></article>
-      <article class="article"><p>hehe</p></article>
-      <article class="article"><p>hosos</p></article>
-      <input type="number" />
-      <button class="btn" onclick="haha()">Start</button>
-    </div>
     <script>
-      const articles = document.querySelectorAll("article>p");
-      function haha() {
-        for (const para of articles) {
-          para.classList.add("read");
-        }
+      function progress(second) {
+        const bar = document.querySelector(".bar");
+        bar.style.transition = `${second}s linear width`;
+        bar.style.width = "100%";
       }
     </script>
   </body>
