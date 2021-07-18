@@ -5,40 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .container {
+      width: 800px;
+      background-color: antiquewhite;
+    }
+    .progress {
+      width: 0%;
+      height: 20px;
+      background-color: pink;
+    }
+  </style>
   <body>
     <div class="container">
       <h1 class="text">I will be programmer</h1>
-      <ul class="list-group">
-        <div class="list-item">js course <span class="float">$10</span></div>
-      </ul>
-      <button>Sort course</button>
+      <div class="progress"></div>
+      <button onclick="bar(2)">Sort course</button>
     </div>
-    <script>
-      const course = [
-        {
-          name: "React JS",
-          price: "2",
-        },
-        {
-          name: "CSS",
-          price: "3",
-        },
-        {
-          name: "C++",
-          price: "1",
-        },
-        {
-          name: "Node JS",
-          price: "6",
-        },
-      ];
-      function generateList() {
-        const ul = document.querySelector(".list-group");
-        course.forEach((item) => {
-          const li = document.createElement("p");
-        });
-      }
-      generateList();
-    </script>
+    <script src="mdn.js"></script>
   </body>
 </html>

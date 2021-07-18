@@ -11,7 +11,7 @@
       <ul class="list-group">
         <div class="list-item">js course <span class="float">$10</span></div>
       </ul>
-      <button class="btn">Sort course</button>
+      <button class="btn">check</button>
     </div>
     <script>
       const course = [
@@ -54,7 +54,8 @@
       }
       window.addEventListener("load", generateList);
 
-      const button = document.querySelector(".btn");
+      let button = document.querySelector(".btn");
+
       button.addEventListener("click", () => {
         course.sort((a, b) => a.price - b.price);
         generateList();

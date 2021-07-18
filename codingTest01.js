@@ -164,3 +164,19 @@ getCount("abracadabrai");
 // }
 
 // console.log(removeOdd(num2));
+
+// 제일 큰 숫자 찾기
+
+var num = Math.max(2, 4, 5, 6, 7);
+
+//  어디서 정의 하느냐에 따라 출력값이 다르게 다옴
+var number = [1, 400, 12, 34, 4];
+
+let i = 0;
+let total = 0;
+while (i < number.length) {
+  total += number[i];
+  i++;
+
+  console.log(total);
+}
