@@ -18,6 +18,8 @@
 
 // let text = "";
 // for (let x in person) {
+ 
+    
 //   text += person[x];
 //   console.log(x);
 // }
@@ -37,7 +39,7 @@
 
 // // 방법 2
 // arr = ['strart',...arr,'end']
-// console.log(arr);
+
 
 // How do you create a private vairable in JS ***********
 
@@ -52,18 +54,18 @@
 
 // What is the output? (closure)
 
-// let num = 4;
-// function outer() {
-//    num = 2;
-//   function inner() {
-//     num += 2
-//     console.log(num);
-//      num = 3;
-//     console.log(num);
-//   }
-//   inner();
-// }
-// outer();
+let num = 4;
+function outer() {
+   num = 2;
+  function inner() {
+    num += 2
+    console.log(num);
+     num = 3;
+    console.log(num);
+  }
+inner();
+}
+outer();
 
 // for (let i = 0; i < 10; i++) {
 //   window.setTimeout(() => {

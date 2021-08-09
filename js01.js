@@ -1,21 +1,30 @@
 // #id, .class , element ------------------------------------------------>
-// const click = document.querySelector("input");
-// // id에서 갖고 오기
-// const number = document.getElementById("h1");
-// const section = document.querySelector("section");
-// const h2 = document.querySelector("h2");
-// console.log(h2);
+const click = document.querySelector("input");
+// id에서 갖고 오기
+const number = document.getElementById("h1");
+const section = document.querySelector("section");
+const h2 = document.querySelector("h2");
+console.log(h2);
+
+const increment = () => {
+  let num = "";
+  for (i = 0; i < 3; i++) {
+    num += "😙";
+    //  이 밑에 있는 코드를 어디에 두느냐에 따라 브라우져에 나타나는것 이 달라짐
+    number.innerHTML += `<h1>${num}</h1>`;
+  }
+  number.innerHTML += `<h1>${num} 이건 바깥에 있는 경우</h1>`;
+  h2.innerText = "innerText";
+};
 
 // const increment = () => {
 //   let num = "";
-//   for (i = 0; i < 3; i++) {
-//     num += "😙";
-//     //  이 밑에 있는 코드를 어디에 두느냐에 따라 브라우져에 나타나는것 이 달라짐
-//     number.innerHTML += `<h1>${num}</h1>`;
+//   for (i = 0; i < 4; i++) {
+//     num += "♥️";
+//     number.innerHTML += `<p>${num} </p>`;
 //   }
-//   number.innerHTML += `<h1>${num} 이건 바깥에 있는 경우</h1>`;
-//   h2.innerText = "innerText";
 // };
+increment();
 
 //  toggle 고쳐야 할것  ###############################
 // click.addEventListener("click", () => {
@@ -530,11 +539,11 @@ const number = [1, 3, 2, 5, 2, 6, 3, 7, 29, 55, 10];
 
 // 45. Iterate Multidimensional Array
 
-let myGrade = [
-  [2, 4, 5, 6, 2, 89],
-  [20, 40, 50, 10, 2, 89],
-  [200, 400, 500, 100, 20, 890],
-];
+// let myGrade = [
+//   [2, 4, 5, 6, 2, 89],
+//   [20, 40, 50, 10, 2, 89],
+//   [200, 400, 500, 100, 20, 890],
+// ];
 
 // for (let i = 0; i < myGrade.length; i++) {
 //   console.log(myGrade[i]);

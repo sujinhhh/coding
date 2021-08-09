@@ -1,3 +1,44 @@
+// 배열값 짝수를 빼내서 4곱해서 다 더하기
+
+const items = [1,2,3,4,5,6]
+
+const result = items
+.filter(num=> num % 2 === 0)
+.map(num=>num * 4)
+.reduce((a,b)=>a+b,0)
+
+
+const items = [1, 2, 3, 4, 5, 6];
+
+const result = items
+  .filter((num) => num % 2 === 0)
+  .reduce((a, b) => a+(b*4), 0);
+
+console.log(result);
+
+
+// **** optional chaning
+
+// 해석,bad code =>
+function displayJob(person) {
+  if (person.job && person.job.title) {
+    console.log(person.job.title);
+  }
+}
+
+//  더 나은 코드
+function displayJob(person) {
+  if (person.job?.title) {
+    console.log(person.job.title);
+  }
+}
+
+//  person.job 이 있으면 title 표시하고 없음 물음표 뒤에꺼
+function displayJob(person) {
+  const title = person.job?.title ?? "no job";
+  return title;
+}
+
 /* 1. given a string reverse it *********
 reverse('apple') ='elppa' 
 palindrome
@@ -10,7 +51,10 @@ palindrome
 
 // reverse("sujin");
 
-// 2. find the charactor appears the most, and how many times appear ********
+// 2. 
+
+
+find the charactor appears the most, and how many times appear ********
 //
 
 // const maxChar = (str) => {
