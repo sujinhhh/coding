@@ -1,5 +1,9 @@
-const a = "foo";
+let name = ["h", "j", "5", "4"];
 
-console.log(Array.from((a) => a + "love"));
+for (let i = 0; i < name.length; i++) {
+  console.log(name[i]);
+}
 
-console.log(a.split(""));
+name.forEach((a) => console.log(a));
+
+
