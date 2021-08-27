@@ -224,3 +224,6 @@ while (i < number.length) {
 
   console.log(total);
 }
+
+
+

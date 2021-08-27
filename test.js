@@ -1,9 +1,11 @@
-let name = ["h", "j", "5", "4"];
+/* 1. given a string reverse it *********
+reverse('apple') ='elppa' 
+palindrome
+ */
 
-for (let i = 0; i < name.length; i++) {
-  console.log(name[i]);
+function reverse(str) {
+  str = str.split("").reverse("").join("");
+  console.log(str);
 }
 
-name.forEach((a) => console.log(a));
-
-
+reverse("sujin");

@@ -36,7 +36,3 @@ const str = "2,3,5,4,2";
 const newStr = str.replaceAll("2", "4");
 
 console.log(newStr);
-
-// ----------------------------  function 안에 function
-
-const example = (a, b) => (c, d) => (e, f) => a * b * c * e * f;

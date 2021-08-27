@@ -107,3 +107,60 @@ console.log(names);
 // parseInt(pow)
 
 // Math.trunc(num)) -> 소수점 빼기
+
+
+// True , false 확인
+const highscores = students.some((student) => student.score > 90);
+const scores = students.every((student) => student.score > 20);
+
+
+
+
+// Array => string 만들기
+
+map().join()  'or' toString()
+
+
+//  배열만들기
+
+function multiply(){
+  console.log([...arguments]);
+  
+  }
+  multiply(2,4,5,6,6)
+
+  // ***  화살함수는 argments 안되서 파라미터에 넣어 주어야 함
+  const multiply2 = (...args) => {
+    console.log(args);
+    
+  }
+
+// length, push : 더해서 길이가 나옴
+
+
+const  a = [0, 1]
+const b = [1, 1, 0, 0, 4, 0, 5, 6, 7, 0, 9]
+console.log(a.push(...b));
+
+
+
+//  returns simple yes or no
+
+some()
+every()
+includes()
+
+
+// false : 0, '', undefined, null, -1
+// 있으면 인덱스 값 출력, 없으면 -1,  
+indexOf()
+
+
+// string으로 반환
+const multiply2 = (num) => {
+  return [...(num + "")];
+};
+console.log(multiply2(26));
+
+join();
+

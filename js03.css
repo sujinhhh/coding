@@ -9,3 +9,7 @@ button {
 #btn {
   background-color: hotpink;
 }
+#btn:hover {
+  color: #000000;
+}
+
