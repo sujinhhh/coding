@@ -1,0 +1,10 @@
+/* 액자 모양 */
+.tri {
+  height: 100px;
+  width: 100px;
+  background-color: pink;
+  border-top: 10px solid burlywood;
+  border-bottom: 10px solid greenyellow;
+  border-left: 10px solid royalblue;
+  border-right: 10px solid yellow;
+}

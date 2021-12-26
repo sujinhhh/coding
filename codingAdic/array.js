@@ -22,3 +22,19 @@ const getAverage = (...scrores) => {
   console.log(average);
 };
 getAverage(30, 30, 30, 30, 30);
+
+//  다른 버전
+const getAverage = (...scrores) => {
+  console.log(scrores);
+
+  let count = 0;
+  let total = 0;
+
+  for (let i = 0; i < scrores.length; i++) {
+    if (scrores[i] !== undefined) {
+      count++;
+      total += scrores[i];
+    }
+  }
+  console.log(total / count);
+};

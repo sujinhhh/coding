@@ -153,7 +153,7 @@ includes()
 
 // false : 0, '', undefined, null, -1
 // 있으면 인덱스 값 출력, 없으면 -1,  
-indexOf()
+indexof 
 
 
 // string으로 반환
@@ -162,5 +162,19 @@ const multiply2 = (num) => {
 };
 console.log(multiply2(26));
 
+// string 만들기 2
 join();
+
+// string 만들기 3
+String(num)
+
+
+
+//  Array 를 자름
+
+let grades = [7,1,5,3,6,4]
+
+grades.length = 3
+
+grades.splice(0,1)
 

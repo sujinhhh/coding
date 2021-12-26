@@ -46,6 +46,8 @@
 // console.log(memory.insideExcuted);
 // console.log(memory.outsideExcuted);
 
+// Object===============>
+
 // 58. Default Parameters, Rest Parameters, Implicit Parameters --------->
 
 function defaultPara(x, y = 2) {
@@ -163,6 +165,18 @@ console.log(defaultPara(4));
 // let me = new protoUser("sujin", "programmer");
 // console.log(me.outputStuff());
 // console.log(me.greet());
+
+// inherit object through prototype
+let user = {
+  active: true,
+};
+
+let teacher = {
+  teaching: ["math", "English"],
+};
+
+Object.setPrototypeOf(teacher, user);
+console.log(teacher.active);
 
 // Prototype inheritance : object that from another object inheritance from
 // 77. Setting an Object Prototype using Objet.setPrototypeOf

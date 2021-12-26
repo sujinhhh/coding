@@ -108,16 +108,18 @@ const third = [3, 3, 2, 8, 7, 6, 5];
 
 const count = (data) => {
   return data.reduce((total, item, index) => {
-    let match = item === data[index + 2] && data[index + 1];
+    let match = item === data[index + 2] && item !== data[index + 1];
     if (match) return total + 1;
     return total;
   }, 0);
 };
 
+console.log(count(first));
+
 const count = (data) => {
   return data.reduce(
     (total, item, index) =>
-      total + (item === data[index + 2] && data[index + 1]),
+      total + (item === data[index + 2] && item !== data[index + 1]),
     0
   );
 };

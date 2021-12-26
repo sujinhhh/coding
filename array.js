@@ -18,8 +18,8 @@
 
 // let text = "";
 // for (let x in person) {
- 
-    
+
+
 //   text += person[x];
 //   console.log(x);
 // }
@@ -56,14 +56,14 @@
 
 let num = 4;
 function outer() {
-   num = 2;
+  num = 2;
   function inner() {
     num += 2
     console.log(num);
-     num = 3;
+    num = 3;
     console.log(num);
   }
-inner();
+  inner();
 }
 outer();
 

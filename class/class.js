@@ -74,37 +74,87 @@
 
 // ============================================ constructor에 callback 넣기
 
-class Counter {
-  constructor(run) {
-    this.counter = 0;
-    this.callback = run;
-  }
-  increment() {
-    this.counter++;
-    if (this.counter % 2 === 0) {
-      this.callback && this.callback(this.counter);
-    } else console.log(this.counter);
-  }
+// class Counter {
+//   constructor(run) {
+//     this.counter = 0;
+//     this.callback = run;
+//   }
+//   increment() {
+//     this.counter++;
+//     if (this.counter % 2 === 0) {
+//       this.callback && this.callback(this.counter);
+//     } else console.log(this.counter);
+//   }
+// }
+
+// const doSomething = (num) => {
+//   console.log("hey", num);
+// };
+// const doSomethingElse = (num) => {
+//   console.log("개인연구", num);
+// };
+
+// const increase = new Counter(doSomething);
+// const alert = new Counter(doSomethingElse);
+
+// increase.increment();
+// increase.increment();
+// increase.increment();
+// increase.increment();
+// increase.increment();
+// increase.increment();
+
+// alert.increment();
+// alert.increment();
+// alert.increment();
+// alert.increment();
+
+// Caleb ============================================
+
+// constructor , takes information as input gives you new object
+
+// Ninja ============================================
+
+// method chaining
+
+// class User {
+//   constructor(name, teaching) {
+//     this.name = name;
+//     this.teaching = teaching;
+//     this.score = 0;
+//   }
+//   updateScoure() {
+//     this.score++;
+//     console.log(this.name, "score is now", this.score);
+//     return this;
+//   }
+// }
+
+// const userOne = new User("sujin", "english");
+// userOne.updateScoure();
+// userOne.updateScoure();
+// userOne.updateScoure();
+
+// // Prototype
+
+// Admin.prototype = Object.create(User.protyotype);
+
+
+
+// object constructors
+
+function Animal(species) {
+  this.species = species;
+  this.eats = true;
 }
 
-const doSomething = (num) => {
-  console.log("hey", num);
-};
-const doSomethingElse = (num) => {
-  console.log("개인연구", num);
-};
+Animal.prototype.walks = function () {
+  return `A ${this.species} is walking`
+}
 
-const increase = new Counter(doSomething);
-const alert = new Counter(doSomethingElse);
+const Bear = new Animal('bear')
 
-increase.increment();
-increase.increment();
-increase.increment();
-increase.increment();
-increase.increment();
-increase.increment();
+console.log(Bear.species);
+console.log(Bear.__proto__);
 
-alert.increment();
-alert.increment();
-alert.increment();
-alert.increment();
+

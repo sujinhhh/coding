@@ -1,11 +1,11 @@
-const num = [1, 6, 3, 6, 3, 2];
+function User(email, name) {
+  (this.email = email), (this.name = name);
+  this.online = false;
+  this.login = function () {
+    console.log(this.email, "has logged in");
+  };
+}
 
-const a = [...new Set(num)];
+let userOne = new User("ccclala@hotmail.com", "sujin");
 
-const text = document.querySelector(".text");
-
-text.innerHTML = a
-  .map((i) => {
-    return `<h1>${i}</h1>`;
-  })
-  .join("");
+console.log(userOne);

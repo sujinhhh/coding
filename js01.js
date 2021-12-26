@@ -475,6 +475,7 @@ increment();
 // let spliceDel = newArr.splice(0, 3);
 // console.log(spliceDel);
 // console.log(newArr);
+arr.pop() : 맨 뒤에거 지움
 
 // // 원하는것 추가 (index, 지우고 싶은 양, 추가하고 싶은거)
 // let spliceAdd = newArr.splice(0, 0, "My dream programmer");

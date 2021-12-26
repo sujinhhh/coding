@@ -1,11 +1,13 @@
-/* 1. given a string reverse it *********
-reverse('apple') ='elppa' 
-palindrome
- */
-
-function reverse(str) {
-  str = str.split("").reverse("").join("");
-  console.log(str);
+const sumAll = (num)=>{
+  num.sort()
+  let sum = 0
+  for(let i=num[0]; i<=num[1]; i++){
+    sum += i
+  }
+ console.log(sum);
 }
+sumAll([1,4])
 
-reverse("sujin");
+// first num + 1 
+
+// Pre + 1 < b

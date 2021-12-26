@@ -36,3 +36,18 @@ const str = "2,3,5,4,2";
 const newStr = str.replaceAll("2", "4");
 
 console.log(newStr);
+
+// --------------------------- 제곱, 키 만들어 넣기
+
+pow.calculated = {};
+function pow(x, y) {
+  let key = x + "^" + y;
+  let total = 1;
+  for (let i = 0; i < y; i++) {
+    total *= x;
+  }
+  pow.calculated[key] = total;
+}
+
+pow(3, 2);
+console.log(pow.calculated);
