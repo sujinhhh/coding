@@ -1,13 +1,38 @@
-const sumAll = (num)=>{
-  num.sort()
-  let sum = 0
-  for(let i=num[0]; i<=num[1]; i++){
-    sum += i
-  }
- console.log(sum);
-}
-sumAll([1,4])
+// Recursion  : it calls itself
 
-// first num + 1 
+// function countDown(n) {
+//   for (let i = n; i > 0; i--) {
+//     console.log(i);
+//   }
+//   console.log("reursion");
+// }
+// countDown(3);
 
-// Pre + 1 < b
+// function recursive(n) {
+//   if (n <= 0) {
+//     return;
+//   }
+//   console.log(n);
+//   recursive(n - 1);
+// }
+// recursive(3)
+
+// // Recursive
+// // 방법 2
+// function recursiveFibOne(n){
+//     if ( n < 3) {
+//         return n-1
+//     } else {
+//         return recursiveFibOne(n-1) + recursiveFibOne(n-2)
+//     }
+// }
+// console.log(recursiveFibOne(4))
+
+const countTen = (n = 1) => {
+  console.log(n);
+  if (n > 10) return;
+  n++;
+  countTen(n);
+};
+
+countTen();

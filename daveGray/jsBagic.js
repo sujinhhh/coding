@@ -651,3 +651,5 @@ const myPromise = new Promise((resolve, reject) => {
     reject("no, rejected");
   }
 });
+
+// Recursion  : it calls itself

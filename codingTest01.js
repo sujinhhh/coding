@@ -107,23 +107,7 @@ find the charactor appears the most, and how many times appear ********
 
 // const numbers = [3, 4, 5, 2, 5, 6, 3];
 
-// const number = (num) => {
-//   numberArr = [];
-//   for (let arr of num)
-//     !numberArr[arr] ? (numberArr[arr] = 1) : numberArr[arr]++;
 
-//   let maxNum = 0;
-//   let maxChar = "";
-//   for (let arr in numberArr) {
-//     if(numberArr[arr]>=maxNum){
-//       maxNum = numberArr[arr]
-//       maxChar = arr
-//     }
-//   }
-//   console.log(`${maxNum}:${maxChar}`);
-// };
-
-// number(numbers);
 
 const number = (num) => {
   let numberArr = [];

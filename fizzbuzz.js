@@ -15,7 +15,7 @@
 //   };
 // }
 // function foo2() {
-//   return;
+// return;
 //   {
 //     bar: "hello";
 //   }
