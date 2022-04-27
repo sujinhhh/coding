@@ -10,6 +10,8 @@ const fibonacci = (n) => {
 
 console.log(fibonacci(8));
 
+// 1.Fibonacci 수열 ----------------------------------
+
 // 2. palindrome ----------------------------------
 
 // const palindrome = (str) => {
@@ -19,12 +21,38 @@ console.log(fibonacci(8));
 
 // 3. fizzbuzz ----------------------------------
 
+const fizzBuzzy = (n) => {
+  let value = "";
+  for (let i = 1; i <= n; i++) {
+    i % 2 === 0 && i % 3 === 0
+      ? (value += "fizzbuzz ")
+      : i % 2 === 0
+      ? (value += "fizz ")
+      : i % 3 === 0
+      ? (value += "buzz ")
+      : (value += `${i} `);
+  }
+  console.log(value);
+};
+fizzBuzzy(10);
+
 // 4. Write a functon that removes odd numbers from an arry of numbers
 
 const evenNumber = (arr) => {
   const evenNum = arr.filter((even) => even % 2 === 0);
   console.log(evenNum);
 };
+evenNumber([1, 2, 3, 4, 5, 7]);
+
+// ==> if
+const evenNumber = (n) => {
+  let newArray = [];
+  for (let i = 0; i < n.length; i++) {
+    if (n[i] % 2 === 0) newArray.push(n[i]);
+  }
+  console.log(newArray);
+};
+
 evenNumber([1, 2, 3, 4, 5, 7]);
 
 // 5. 기본개념
@@ -100,3 +128,35 @@ console.log(palindromeNum(500));
 //   }
 // }
 // chunk(num, 3);
+
+//10. 0이 들어간 배열 곱하기
+
+// const muli = (...arg) => {
+//   console.log(arg);
+//   const result = arg.reduce((total, item) => {
+//     return item ? item * total : total + item;
+//   }, 1);
+//   console.log(result);
+// };
+// muli(0, 3, 7, 8);
+
+//11. 날짜 구하기 desrtucture
+
+const date1 = new Date("June 16, 2021");
+const date2 = new Date("July 14, 2021");
+
+const getDays = (date1, date2) =>
+  Math.round(Math.abs(date2 - date1) / (1000 * 3600 * 24));
+
+console.log(getDays(date1, date2));
+
+// 13.  모음 찾기 ====================================> */
+// // new Set() : 반복되는것을 빼줌
+// findVowels("abracadabrai");
+
+// function findVowels(str) {
+//   let vowels = "";
+//   vowels = new Set(str.match(/[aeiou]/g));
+//   console.log([...vowels]);
+// }
+  

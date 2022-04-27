@@ -53,4 +53,14 @@
 const items = Array.from({ length: 20 }, (_, index) => {
   return index;
 });
-console.log(items);
+const itemPerPage = 8
+const pages = Math.ceil(items.length /itemPerPage)
+
+
+const newItems = Array.from({length:pages},(_,index)=>{
+  const start = index * itemPerPage
+  const tempItems = items.slice(start, start + itemPerPage)
+  return tempItems
+})
+
+console.log(newItems);

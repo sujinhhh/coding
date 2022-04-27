@@ -1,38 +1,7 @@
-// Recursion  : it calls itself
+const date1 = new Date("June 16, 2021");
+const date2 = new Date("July 14, 2021");
 
-// function countDown(n) {
-//   for (let i = n; i > 0; i--) {
-//     console.log(i);
-//   }
-//   console.log("reursion");
-// }
-// countDown(3);
+const getDays = (date1, date2) =>
+  Math.round(Math.abs(date2 - date1) / (1000 * 3600 * 24));
 
-// function recursive(n) {
-//   if (n <= 0) {
-//     return;
-//   }
-//   console.log(n);
-//   recursive(n - 1);
-// }
-// recursive(3)
-
-// // Recursive
-// // 방법 2
-// function recursiveFibOne(n){
-//     if ( n < 3) {
-//         return n-1
-//     } else {
-//         return recursiveFibOne(n-1) + recursiveFibOne(n-2)
-//     }
-// }
-// console.log(recursiveFibOne(4))
-
-const countTen = (n = 1) => {
-  console.log(n);
-  if (n > 10) return;
-  n++;
-  countTen(n);
-};
-
-countTen();
+console.log(getDays(date1, date2));

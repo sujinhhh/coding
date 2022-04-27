@@ -1,182 +1,129 @@
-// // callback hell example
+// Getter, Setter ==============================>
 
-// class UserStorage {
-//   loginUser(id, password, onSuccess, onError) {
-//     setTimeout(() => {
-//       if (
-//         (id === "ellie" && password === "dream") ||
-//         (id === "coder" && password === "academy")
-//       ) {
-//         onSuccess(id);
-//       } else {
-//         onError(new Error("not found"));
-//       }
-//     }, 2000);
+// class User {
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
 //   }
-//   getRoles(user, onSuccess, onError) {
-//     setTimeout(() => {
-//       if (user === "ellie") {
-//         onSuccess({ name: "ellie", role: "admin" });
-//       } else {
-//         onError(new Error("no asscess"));
-//       }
-//     }, 1000);
+//   get age() {
+//     return this._age;
+//   }
+//   set age(value) {
+//     this._age = value < 0 ? 0 : value;
 //   }
 // }
 
-// const userStorage = new UserStorage();
-// const id = prompt('enter your id')
-// const password = prompt('enter your password')
-// userStorage.loginUser(id,password, (user)=>{
-//     userStorage.getRoles(user,)
-// }, (error)=>{console.log(err);})
+// const user1 = new User("sujin", "job", -1);
+// console.log(user1.age);
 
-// const promise = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     // resolve("리졸브");
-//     reject(new Error("error"));
-//   }, 2000);
-// });
+// Static  ==============================>
 
-// promise
-//   .then((value) => {
-//     console.log(value);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+class Experiment {
+  static publisher = "sujin";
+  constructor(article) {
+    this.article = article;
+  }
+  static print() {
+    console.log(Experiment.publisher);
+  }
+}
+const experiment1 = new Experiment(1);
+const experiment2 = new Experiment(2);
+console.log(Experiment.print());
 
-// //   promise chanining
+// Static  ==============================>
 
-// const fetchNumber = new Promise((resolve, reject) => {
-//   setTimeout(() => resolve(1), 1000);
-// });
-// fetchNumber
-//   .then((num) => num * 2) //2
-//   .then((num) => num * 3) //6
-//   .then((num) => {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => resolve(num - 1), 1000);
-//     });
-//   })
-//   .then((num) => console.log(num)); //5
+class Shape {
+  constructor(width, height, color) {
+    this.width = width;
+    this.height = height;
+    this.color = color;
+  }
+  draw() {
+    console.log(`drawiong ${this.color} color of`);
+  }
+  getArea() {
+    console.log(this.width * this.height);
+  }
+}
 
-//  Error Handling
+class Rectangle extends Shape {}
+class Triangle extends Shape {
+  getArea() {
+    super.getArea();
+    console.log((this.width * this.height) / 2);
+  }
+}
+const rectangle = new Rectangle(20, 20, "blue");
+const triangle = new Triangle(20, 20, "blue");
+triangle.getArea();
 
-// const getHen = () =>
-//   new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve("♥️");
-//     }, 1000);
-//   });
-// const getEgg = (hen) =>
-//   new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       reject(new Error());
-//     }, 1000);
-//     // setTimeout(() => {
-//     //   resolve(`${hen} + ⭕️`);
-//     // }, 1000);
-//   });
-// const cook = (egg) =>
-//   new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(`${egg} + 💖 `);
-//     }, 1000);
-//   });
+// instanceOf // instance 가 맞는지 확인
 
-// getHen() //
-//   .then(getEgg)
-//   //   .catch((err) => "💥")
-//   .then(cook)
-//   .then(console.log)
-//   .catch(console.log);
+// object = {key : value}
 
-// callback hell example => Promisse
+const obj1 = {}; // object literal
+const obj2 = new Object(); // object constructor
 
-// class UserStorage {
-//   loginUser(id, password) {
-//     return new Promise((resove, reject) => {
-//       setTimeout(() => {
-//         if (
-//           (id === "ellie" && password === "dream") ||
-//           (id === "coder" && password === "academy")
-//         ) {
-//           resove(id);
-//         } else {
-//           reject(new Error("not found"));
-//         }
-//       }, 2000);
-//     });
-//   }
-//   getRoles(user, onSuccess, onError) {
-//     setTimeout(() => {
-//       if (user === "ellie") {
-//         onSuccess({ name: "ellie", role: "admin" });
-//       } else {
-//         onError(new Error("no asscess"));
-//       }
-//     }, 1000);
-//   }
+function print(person) {
+  console.log(person.name);
+  console.log(person.age);
+}
+const sujin = { name: "sujin", age: 42 };
+
+sujin.job = "programer";
+
+console.log(sujin.job);
+
+delete sujin.job;
+console.log(sujin.job);
+
+// Computed properties =>['name'] : 어떤게 올지 모를 때, 나중에 결정되는것에 씀
+
+console.log(sujin.age);
+console.log(sujin["name"]);
+
+function printValue(obj, key) {
+  console.log(obj[key]);
+}
+printValue(sujin, "age");
+
+// Propery value shorhand
+
+const person1 = { name: "bob", age: 2 };
+const person2 = { name: "Jaen", age: 4 };
+
+// function makeName(name, age) {
+//     return {
+//         name,
+//         age
+//     }
 // }
 
-// const userStorage = new UserStorage();
-// const id = prompt("enter your id");
-// const password = prompt("enter your password");
-// userStorage.loginUser(
-//   id,
-//   password,
-//   (user) => {
-//     userStorage.getRoles(user);
-//   },
-//   (error) => {
-//     console.log(err);
-//   }
-// );
+//  위에 거랑 똑같은거 class 버전 Constructor function
+function MakeName(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const person3 = new MakeName("sujin", 57);
+console.log(person3);
 
-// async & await
+// in operator : 키가 있는지 없는지 확이
 
-// async function fetchUser() {
-//   return "sujin";
-// }
-// const user = await fetchUser();
-// console.log(user);
+console.log("name" in person3);
 
-// await
+//  for ..in ve for ..of
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+for (key in person3) {
+  key;
 }
 
-async function getApple() {
-  await delay(2000);
-  return "⭕️";
+const array = [1, 2, 3, 4, 5];
+for (value of array) {
+  console.log(value);
 }
 
-async function getBanana() {
-  await delay(2000);
-  return "👍";
-}
-
-async function pickFruits() {
-  const apple = await getApple();
-  const banana = await getBanana();
-  return apple + banana;
-}
-pickFruits().then(console.log);
-
-// useful Promise API
-
-function pickAllFruits() {
-  return Promise.all([getApple(), getBanana()]).then((fruits) =>
-    fruits.join(" + ")
-  );
-}
-pickAllFruits().then(console.log);
-
-// 아무거나 첫번째로 나오는 것을 받고 싶다
-
-function pickOnlyOne() {
-  return Promise.race([getApple(), getBanana()]);
-}
-pickOnlyOne().then(console.log);
+// Object.assign // 오브젝트 복사
+const user4 = Object.assign({}, person3);
+console.log(user4);
