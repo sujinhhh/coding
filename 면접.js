@@ -159,4 +159,14 @@ console.log(getDays(date1, date2));
 //   vowels = new Set(str.match(/[aeiou]/g));
 //   console.log([...vowels]);
 // }
-  
+
+// 14. 숫자 다 합하기
+
+function sumUPTo(num) {
+  let totlalNum = 0;
+  for (let i = 1; i <= num; i++) {
+    totlalNum += i;
+  }
+  return totlalNum;
+}
+console.log(sumUPTo(3));

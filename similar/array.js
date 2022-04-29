@@ -1,3 +1,11 @@
+//  배열에만 쓸수있는 api
+// forEach, reverse
+
+// 배열 일때 안에꺼 뽑아내려면 map, forEach, 요런거 써야함
+// filter : array로 리턴함
+
+// 오브젝트  배열을 string으로 => 일단 map 으로 돌려서 원하는 것을 빼고, join 아님 ...
+
 let names = ["h", "j", "5", "4"];
 
 // 배열에서 한개씩 빼내기
@@ -121,7 +129,12 @@ const scores = students.every((student) => student.score > 20);
 map().join()  'or' toString()
 
 
+// string 으로 배열만들기 
+
+'string'.split('')
+
 //  배열만들기
+
 
 function multiply(){
   console.log([...arguments]);
