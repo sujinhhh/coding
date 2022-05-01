@@ -10,6 +10,13 @@ const fibonacci = (n) => {
 
 console.log(fibonacci(8));
 
+const fib = (num, arr = [0, 1]) => {
+  if (num <= 2) return arr;
+  const [first, next] = arr.slice(-2);
+  return fib(num - 1, [...arr, first + next]);
+};
+console.log(fib(8));
+
 // 1.Fibonacci 수열 ----------------------------------
 
 // 2. palindrome ----------------------------------

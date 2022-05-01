@@ -18,27 +18,38 @@ let names = ["h", "j", "5", "4"];
 
 // for of  *************
 
-const print = document.querySelector(".h1");
-let a = "";
-// for (let i of name) {
+// const print = document.querySelector(".h1");
+// let a = "";
+
+// for (let i of names) {
 //   a += i;
-//   print.innerHTML += `<h1>${a}</h1>`;
 // }
+// print.innerHTML += `<h1>${a} ''</h1>`;
 
 // forEach  *************
 
-names.forEach((item) => {
-  print.innerHTML += `<h1>${item}</h1>`;
-});
+// names.forEach((item) => {
+//   print.innerHTML += `<h1>${item} </h1>`;
+// });
 
 // 비슷한 애들 모음
 
-// = 반복된 애들 빼고 새로운 배열
+// = 반복된 애들 빼고 새로운 오브젝트 반환
 // const iterable = new Set([1, 1, 2, 2, 3, 3]);
+// console.log(iterable);
 
 // Eg) 새로운 배열만들기
-// const arr = [3,2,2,6,6,7,8,0]
-// console.log([...new Set(arr)]);
+const arr = [3, 2, 2, 6, 6, 7, 8, 0];
+console.log([...new Set(arr)]);
+
+// for 를 이용해서 함 만들어 보았음
+// let result = []
+// for(let i = 0; i<arr.length; i++) {
+//   if(arr[i] !== arr[i-1] ){
+//     result.push(arr[i])
+//   }
+// }
+// console.log(result)
 
 // = 두개를 묶어서 새로운 오브젝트 만들어줌 / 둘다 같은 결과
 
@@ -90,18 +101,18 @@ console.log(names);
 // splice( ,)
 // 삭제, 대체, 몇개까지 삭제 하고 싶은지
 
-const b = names.splice(1, 2, "😤", "😱");
-console.log(b);
+// const b = names.splice(1, 2, "😤", "😱");
+// console.log(b);
 
-console.log(names);
+// console.log(names);
 
-// = 글자를 하나하나 떼어줌
+// // = 글자를 하나하나 떼어줌
 
-// const a = 'foo'
+// const a = "foo";
 
-// console.log(Array.from(a));
+// // console.log(Array.from(a));
 
-// console.log(a.split(''));
+// console.log(a.split(""));
 
 // Array from 은 따로 떼네서 먼가 할수 있음 (string으로 바꾸어야 나옴)
 
@@ -112,82 +123,72 @@ console.log(names);
 
 // = 정수만들기
 
-// parseInt(pow)
+console.log(parseInt(9.4));
 
-// Math.trunc(num)) -> 소수점 빼기
-
+console.log(Math.trunc(1.724));
+// -> 소수점 빼기
 
 // True , false 확인
-const highscores = students.some((student) => student.score > 90);
-const scores = students.every((student) => student.score > 20);
+// const highscores = students.some((student) => student.score > 90);
+// const scores = students.every((student) => student.score > 20);
 
+// // Array => string 만들기
+const bd = toString(0);
+console.log(typeof bd);
+// map().join()  'or' toString()
 
+// // string 으로 배열만들기
 
+// 'string'.split('')
 
-// Array => string 만들기
+// //  배열만들기
 
-map().join()  'or' toString()
+// function multiply(){
+//   console.log([...arguments]);
 
+//   }
+//   multiply(2,4,5,6,6)
 
-// string 으로 배열만들기 
-
-'string'.split('')
-
-//  배열만들기
-
-
-function multiply(){
-  console.log([...arguments]);
-  
-  }
-  multiply(2,4,5,6,6)
-
-  // ***  화살함수는 argments 안되서 파라미터에 넣어 주어야 함
-  const multiply2 = (...args) => {
-    console.log(args);
-    
-  }
-
-// length, push : 더해서 길이가 나옴
-
-
-const  a = [0, 1]
-const b = [1, 1, 0, 0, 4, 0, 5, 6, 7, 0, 9]
-console.log(a.push(...b));
-
-
-
-//  returns simple yes or no
-
-some()
-every()
-includes()
-
-
-// false : 0, '', undefined, null, -1
-// 있으면 인덱스 값 출력, 없으면 -1,  
-indexof 
-
-
-// string으로 반환
-const multiply2 = (num) => {
-  return [...(num + "")];
+//   // ***  화살함수는 argments 안되서 파라미터에 넣어 주어야 함
+const multiply2 = (...args) => {
+  console.log(args);
 };
-console.log(multiply2(26));
+multiply2(2, 4, 5, 6, 6);
 
-// string 만들기 2
-join();
+// // length, push : 더해서 길이가 나옴
 
-// string 만들기 3
-String(num)
+const a = [1, 2];
+const b = [1, 1, 0, 0, 4, 0, 5, 6, 7, 0, 9];
+// console.log(a.push(...b));
 
+// //  returns simple yes or no
 
+// some()
+// every()
+console.log(a.includes(1));
 
-//  Array 를 자름
+// // false : 0, '', undefined, null, -1
+// // 있으면 인덱스 값 출력, 없으면 -1,
 
-let grades = [7,1,5,3,6,4]
+console.log(a.indexOf(1));
 
-grades.length = 3
+// // string으로 반환
+// const multiply2 = (num) => {
+//   return [...(num + "")];
+// };
+// console.log(multiply2(26));
 
-grades.splice(0,1)
+// // string 만들기 2
+console.log();
+a.join();
 
+// // string 만들기 3
+// String(num)
+
+// //  Array 를 자름
+
+// let grades = [7,1,5,3,6,4]
+
+// grades.length = 3
+
+// grades.splice(0,1)

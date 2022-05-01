@@ -167,16 +167,16 @@ console.log(defaultPara(4));
 // console.log(me.greet());
 
 // inherit object through prototype
-let user = {
-  active: true,
-};
+// let user = {
+//   active: true,
+// };
 
-let teacher = {
-  teaching: ["math", "English"],
-};
+// let teacher = {
+//   teaching: ["math", "English"],
+// };
 
-Object.setPrototypeOf(teacher, user);
-console.log(teacher.active);
+// Object.setPrototypeOf(teacher, user);
+// console.log(teacher.active);
 
 // Prototype inheritance : object that from another object inheritance from
 // 77. Setting an Object Prototype using Objet.setPrototypeOf
