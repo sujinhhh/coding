@@ -45,22 +45,22 @@ fizzBuzzy(10);
 
 // 4. Write a functon that removes odd numbers from an arry of numbers
 
-const evenNumber = (arr) => {
-  const evenNum = arr.filter((even) => even % 2 === 0);
-  console.log(evenNum);
-};
-evenNumber([1, 2, 3, 4, 5, 7]);
+// const evenNumber = (arr) => {
+//   const evenNum = arr.filter((even) => even % 2 === 0);
+//   console.log(evenNum);
+// };
+// evenNumber([1, 2, 3, 4, 5, 7]);
 
-// ==> if
-const evenNumber = (n) => {
-  let newArray = [];
-  for (let i = 0; i < n.length; i++) {
-    if (n[i] % 2 === 0) newArray.push(n[i]);
-  }
-  console.log(newArray);
-};
+// // ==> if
+// const evenNumber = (n) => {
+//   let newArray = [];
+//   for (let i = 0; i < n.length; i++) {
+//     if (n[i] % 2 === 0) newArray.push(n[i]);
+//   }
+//   console.log(newArray);
+// };
 
-evenNumber([1, 2, 3, 4, 5, 7]);
+// evenNumber([1, 2, 3, 4, 5, 7]);
 
 // 5. 기본개념
 
@@ -115,10 +115,10 @@ const result = items
 // 500 : -5
 // 12 : 21
 
-const palindromeNum = (num) => {
-  return parseInt(num.toString().split("").reverse().join(""));
-};
-console.log(palindromeNum(500));
+// const palindromeNum = (num) => {
+//   return parseInt(num.toString().split("").reverse().join(""));
+// };
+// console.log(palindromeNum(500));
 
 // 9. Write a function ‘chunk(arr, n)’ that returns a chunked array of size n at the least.
 // Eg:  given, [ 1, 4, 14,2,5,6,3] ,n=3
@@ -149,13 +149,13 @@ console.log(palindromeNum(500));
 
 //11. 날짜 구하기 desrtucture
 
-const date1 = new Date("June 16, 2021");
-const date2 = new Date("July 14, 2021");
+// const date1 = new Date("June 16, 2021");
+// const date2 = new Date("July 14, 2021");
 
-const getDays = (date1, date2) =>
-  Math.round(Math.abs(date2 - date1) / (1000 * 3600 * 24));
+// const getDays = (date1, date2) =>
+//   Math.round(Math.abs(date2 - date1) / (1000 * 3600 * 24));
 
-console.log(getDays(date1, date2));
+// console.log(getDays(date1, date2));
 
 // 13.  모음 찾기 ====================================> */
 // // new Set() : 반복되는것을 빼줌
@@ -169,11 +169,82 @@ console.log(getDays(date1, date2));
 
 // 14. 숫자 다 합하기
 
-function sumUPTo(num) {
-  let totlalNum = 0;
-  for (let i = 1; i <= num; i++) {
-    totlalNum += i;
-  }
-  return totlalNum;
+// function sumUPTo(num) {
+//   let totlalNum = 0;
+//   for (let i = 1; i <= num; i++) {
+//     totlalNum += i;
+//   }
+//   return totlalNum;
+// }
+// console.log(sumUPTo(3));
+
+// write a functions that takes two numbers and returns the sum of
+// those nums
+
+function add(...number2) {
+  console.log(...number2);
+  return number2.reduce((a, b) => a + b, 0);
 }
-console.log(sumUPTo(3));
+console.log("add", add(2, 3, 4, 5));
+
+// or
+
+function add(...number2) {
+  console.log(number2);
+  let sum = 0;
+  for (let i = 0; i < number2.length; i++) {
+    sum += number2[i];
+  }
+  return sum;
+}
+console.log("add", add(2));
+
+// write a function that takes two strings, A and B
+// and returns wheather B is in A in a case-insensitive way
+
+function stringIncludes(a, b) {
+  const lowerCaseA = a.toLowerCase();
+  return lowerCaseA.includes(b);
+}
+console.log(
+  stringIncludes("I drove th New York in a van with my friend", "new")
+);
+
+// Write a function that takes an arrow of object, and returns on
+// array of the objects 'name' property. only if the properties exists
+
+function getNames(arr) {
+  let names = [];
+  for (let obj of arr) {
+    if (obj.name) {
+      names.push(obj.name);
+    }
+  }
+  return names;
+}
+
+console.log(
+  getNames([
+    { a: 1 },
+    { name: "SUjin" },
+    {},
+    { name: "MArk" },
+    { name: "sophia" },
+    { b: 2 },
+  ])
+);
+
+// Write a function that takes an arrow of numbers and returns
+// the index of the largest number
+function getLargestNumber() {}
+console.log(getLargestNumber([7, 1, 4, 12, 9]));
+
+// Write a function that returns a promise that resolves
+// after a number of milliseconds
+
+function delay(n) {}
+(async () => {
+  console.time("Testind delay");
+  await delay(1000);
+  console.log(timeEnd("Testing delay"));
+})();
