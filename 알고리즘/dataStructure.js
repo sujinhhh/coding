@@ -24,29 +24,57 @@ console.log(Math.log2(1073741824));
 
 // Linked Lists
 
-class LinkedList {
-  constructor(value) {
-    const newNode = new Node(value);
-    this.head = newNode;
-    this.tail = this.head;
-    this.lenght = 1;
-  }
-}
-// 모든 메소드가 create node 를 하기 때문에 새로운 클라스를 따로 만들어야 중복을 하지 않음
+// class LinkedList {
+//   constructor(value) {
+//     const newNode = new Node(value);
+//     this.head = newNode;
+//     this.tail = this.head;
+//     this.lenght = 1;
+//   }
+// }
+// // 모든 메소드가 create node 를 하기 때문에 새로운 클라스를 따로 만들어야 중복을 하지 않음
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// 이거를 넣으라는 말임
+// {
+//   value:4
+//   next:null
+// }
+// push
+//   push(value) {
+//     const newNode = new Node(value);
+//     if (!this.head) { //if linked list is empty
+//       this.head = newNode;
+//       this.tail = newNode;
+//     } else {
+//       this.tail.next = newNode;
+//       this.tail = newNode;
+//     }
+//     this.length++;
+//     return this;
+//   }
+// }
+
 class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
-  // 이거를 넣으라는 말임
-  // {
-  //   value:4
-  //   next:null
-  // }
-  // push
+}
+class LinkedList {
+  constructor(value) {
+    const newNode = new Node(value);
+    this.head = newNode;
+    this.tail = this.head;
+    this.length = 1;
+  }
   push(value) {
     const newNode = new Node(value);
     if (!this.head) {
+      //if linked list is empty
       this.head = newNode;
       this.tail = newNode;
     } else {
@@ -57,7 +85,6 @@ class Node {
     return this;
   }
 }
-
-let newNode = new LinkedList(7);
-
-newNode.push(4);
+let myLinkedList = new LinkedList(7);
+myLinkedList.push(4);
+console.log(myLinkedList);
