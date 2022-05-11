@@ -1,5 +1,10 @@
 // 1.Fibonacci 수열 ----------------------------------
-
+// Write a fuction that calculates the nth term in the fibonacci sequence,
+// where this sequence is defined as a series of numbers(0,1,1,2,3,5,8,13)
+// and make whre the sum of any term is the result of adding the previous
+// two terms.
+// Note: make sure that your solution can calculate larger terms(n>30)
+//  fib(0) //0  fib(1)//1
 const fibonacci = (n) => {
   let arr = [0, 1];
   for (let i = 2; i < n; i++) {
@@ -269,3 +274,11 @@ function customFlat(arr, depth = 1) {
   return result;
 }
 console.log(customFlat(arr));
+
+// 숫자 모두 곱하기
+function multifly(n) {
+  if (n === 1) return 1;
+  return n * multifly(n - 1);
+}
+
+console.log(multifly(4));

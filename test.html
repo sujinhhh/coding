@@ -5,9 +5,46 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+    .card {
+      padding: 1em;
+      width: calc(25% -4em -2px);
+      border: 1px solid black;
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: 2em;
+    }
+    @media (max-width:500px){
+      .card {
+        width: 100%;
+        color: aquamarine;
+      }
+    }
+    h1 {
+      text-decoration: underline;
+    }
+    .card__description {
+      font-size: 1.5rem;
+    }
+  </style>
 </head>
 <body>
-  <div id="wrapper"></div>
-  <script src="면접-실전.js"></script>
+  <div class="container">
+    <div class="card">
+      <div class="card__description">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat hic a, cumque nostrum neque dignissimos in eos itaque nihil veniam ullam excepturi, eligendi fugiat delectus velit modi eum illum sed!
+      </div>
+    </div>
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsam suscipit quis, adipisci iusto libero excepturi pariatur cumque similique delectus, vel explicabo sed dignissimos quidem modi esse ullam unde veritatis.
+    </h1>
+  </div>
+  <script src="test.js"></script>
 </body>
 </html>

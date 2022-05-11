@@ -1,9 +1,18 @@
-// flatten the Array
+{
+  function destroyer(arr) {
+    let num = [...arguments].slice(1);
 
-let arr = [
-  [1, 2],
-  [3, 4],
-  [5, 6, [7, 8], 9],
-];
-let flatten = arr.flat(2);
-console.log(flatten);
+    const regex = /[2-3]/g;
+    const found = arr.match(regex);
+
+    console.log(found);
+    const filteredArr = [];
+    for (let i of arr) {
+      if (!num.includes(i)) {
+        filteredArr.push(i);
+      }
+    }
+    console.log(filteredArr);
+  }
+  destroyer("1, 2, 3, 1, 2, 3", 2, 3);
+}
