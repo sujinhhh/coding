@@ -147,3 +147,66 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3);
   };
   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 }
+
+// Make a functioone that looks through of objects(first argument)
+// and return an array of all objects that  have maching name
+// Each name and value pair of the source object has to be present in
+// object from the collection if it is to be inculed in return array
+
+function whatIsInName(collection, source) {
+  const arr = [];
+  const keys = Object.keys(source);
+  console.log(keys);
+
+  for (const obj of collection) {
+    let hasAllKeyValue = true;
+    for (const key of keys) {
+      if (obj[key] !== source[key]) {
+        hasAllKeyValue = false;
+        break;
+      }
+    }
+    if (hasAllKeyValue) {
+      arr.push(obj);
+    }
+  }
+  console.log(arr);
+}
+
+whatIsInName(
+  [{ apple: 1, bat: 2 }, { bat: 1 }, { apple: 1, bat: 2, cookie: 2 }],
+  { apple: 1, cookie: 2 }
+);
+
+// Make a functioone that looks through of objects(first argument)
+// and return an array of all objects that  have maching name
+// Each name and value pair of the source object has to be present in
+// object from the collection if it is to be inculed in return array
+
+function whatIsInName(collection, source) {
+  const keys = Object.keys(source);
+  console.log(keys);
+  const arr = collection.filter((el) => {
+    let hasAllKeyValue = true;
+    for (let key of keys) {
+      if (el[key] !== source[key]) {
+        hasAllKeyValue = false;
+        break;
+      }
+    }
+    return hasAllKeyValue;
+    // 이거랑 같은 뜻
+    // if(hasAllKeyValue){
+    //   return true
+    // } else {
+    //   return false
+    // }
+  });
+
+  console.log(arr);
+}
+
+whatIsInName(
+  [{ apple: 1, bat: 2 }, { bat: 1 }, { apple: 1, bat: 2, cookie: 2 }],
+  { apple: 1, cookie: 2 }
+);

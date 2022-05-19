@@ -1,4 +1,4 @@
-// 1.Fibonacci 수열 ----------------------------------
+// 1.Fibonacci 수열 ---------------------------------- ⭕️
 // Write a fuction that calculates the nth term in the fibonacci sequence,
 // where this sequence is defined as a series of numbers(0,1,1,2,3,5,8,13)
 // and make whre the sum of any term is the result of adding the previous
@@ -15,15 +15,6 @@ const fibonacci = (n) => {
 
 console.log(fibonacci(8));
 
-const fib = (num, arr = [0, 1]) => {
-  if (num <= 2) return arr;
-  const [first, next] = arr.slice(-2);
-  return fib(num - 1, [...arr, first + next]);
-};
-console.log(fib(8));
-
-// 1.Fibonacci 수열 ----------------------------------
-
 // 2. palindrome ----------------------------------
 
 // const palindrome = (str) => {
@@ -31,7 +22,7 @@ console.log(fib(8));
 // };
 // palindrome("sujin");
 
-// 3. fizzbuzz ----------------------------------
+// 3. fizzbuzz ---------------------------------- ⭕️
 
 const fizzBuzzy = (n) => {
   let value = "";
@@ -48,7 +39,7 @@ const fizzBuzzy = (n) => {
 };
 fizzBuzzy(10);
 
-// 4. Write a functon that removes odd numbers from an arry of numbers
+// 4. Write a functon that removes odd numbers from an arry of numbers ⭕️
 
 // const evenNumber = (arr) => {
 //   const evenNum = arr.filter((even) => even % 2 === 0);
@@ -67,7 +58,7 @@ fizzBuzzy(10);
 
 // evenNumber([1, 2, 3, 4, 5, 7]);
 
-// 5. 기본개념
+// 5. 기본개념 ⭕️
 
 // const a = {
 //     b: {
@@ -80,7 +71,7 @@ fizzBuzzy(10);
 //   console.log(d.b.c);
 //   console.log(a.b.c);
 
-// 6. 배열값 짝수를 빼내서 4곱해서 다 더하기
+// 6. 배열값 짝수를 빼내서 4곱해서 다 더하기 ⭕️
 
 const items = [1, 2, 3, 4, 5, 6];
 
@@ -95,7 +86,7 @@ const result = items
 
 // console.log(result);
 
-// 7. find the charactor appears the most, and how many times appear ********
+// 7. find the charactor appears the most, and how many times appear ********⭕️
 //
 
 // const maxChar = (str) => {
@@ -116,7 +107,7 @@ const result = items
 
 // maxChar("dgjkdjgkdjglggg5555555");
 
-// 8. 숫자를 반대로 만들기  *****************
+// 8. 숫자를 반대로 만들기  ***************** ⭕️
 // 500 : -5
 // 12 : 21
 

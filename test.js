@@ -1,18 +1,32 @@
-{
-  function destroyer(arr) {
-    let num = [...arguments].slice(1);
-
-    const regex = /[2-3]/g;
-    const found = arr.match(regex);
-
-    console.log(found);
-    const filteredArr = [];
-    for (let i of arr) {
-      if (!num.includes(i)) {
-        filteredArr.push(i);
-      }
+const symOfTwo = (arr1,arr2) => {
+  
+  const output = []
+  
+  for(const el of arr1) {
+    el
+    if(!output.includes(el) && !arr2.includes(el)){
+     output.push(el)
     }
-    console.log(filteredArr);
+  for(const el of arr2) {
+    el
+    if(!output.includes(el) && !arr1.includes(el)){
+     output.push(el)
+    }
   }
-  destroyer("1, 2, 3, 1, 2, 3", 2, 3);
+  console.log(output);
 }
+
+function sym(args) {
+ const arrofArray = [...arguments]
+ console.log(arrofArray);
+ for(let i=1; i<arrofArray.length; i++){
+  console.log(arguments[i+1]);
+   symOfTwo(arguments[i-1],arguments[i])
+ }
+}
+sym([1,1,2,5],[2,2,3,5],[3,4,5,5])
+
+// compare arg[0] arg[1] 
+// if there's nothing common store in result array.
+// compare arg[3] result array 
+// store numbers not occur both

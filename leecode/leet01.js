@@ -98,6 +98,27 @@ var rotate = function (nums, k) {
 
 console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3));
 
+var rotate = function (nums, k) {
+  k %= nums.length; // if k is greater than nums.length
+  //  then one cycle is completed that means it will remain
+  // the same and we have to remainder shifts
+
+  let reverse = function (i, j) {
+    while (i < j) {
+      let temp = nums[i];
+      nums[i] = nums[j];
+      nums[j] = temp;
+      i++;
+      j--;
+    }
+  }; // suppose  ----->--->
+  reverse(0, nums.length - 1); // reverse   <--<------
+  reverse(0, k - 1); // reverse first part ---><----
+  reverse(k, nums.length - 1); // reverse second part --->----->
+};
+
+rotate([1, 2, 3, 4, 5, 6, 7], 3);
+
 // // Plus One ***************************************
 
 const plusOne = (arr) => {
@@ -157,48 +178,41 @@ const fibonacci = (pos) => {
 
 console.log(fibonacci(8));
 
-
 // // maxSubArray  ***************************************
 
-
 var maxSubArray = function (nums) {
-  if (nums.length === 1) return nums[0]
+  if (nums.length === 1) return nums[0];
 
-  let maxNum = nums[0]
-  let accuNum = nums[0]
+  let maxNum = nums[0];
+  let accuNum = nums[0];
   for (let i = 1; i < nums.length; i++) {
-    let cal = Math.max(nums[i], accuNum + nums[i])
-    if (cal > maxNum) maxNum = cal
-    accuNum = cal
+    let cal = Math.max(nums[i], accuNum + nums[i]);
+    if (cal > maxNum) maxNum = cal;
+    accuNum = cal;
   }
 
   console.log(maxNum);
-
-
 };
 
-maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]);
 
 // // containsDuplicate  ***************************************
 
-
 var containsDuplicate = function (nums) {
-  let memory = {}
+  let memory = {};
   // console.log(memory);
 
   for (let i = 0; i < nums.length; i++) {
     if (memory[nums[i]] === undefined) {
-      memory[nums[i]] = 1
-
-
+      memory[nums[i]] = 1;
     } else {
-      memory[nums[i]]++
+      memory[nums[i]]++;
 
-      return true
+      return true;
     }
   }
 
   console.log(memory);
-  return false
-}
-console.log(containsDuplicate([2, 14, 18, 22, 22]))
+  return false;
+};
+console.log(containsDuplicate([2, 14, 18, 22, 22]));

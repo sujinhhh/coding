@@ -1,3 +1,5 @@
+
+
 function counter(number) {
     let solution = 0;
     const add=(num)=>{
