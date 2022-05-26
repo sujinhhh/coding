@@ -1,4 +1,4 @@
-// 1.Fibonacci 수열 ---------------------------------- ⭕️
+// 1.Fibonacci 수열 ---------------------------------- ⭕️⭕️
 // Write a fuction that calculates the nth term in the fibonacci sequence,
 // where this sequence is defined as a series of numbers(0,1,1,2,3,5,8,13)
 // and make whre the sum of any term is the result of adding the previous
@@ -71,7 +71,7 @@ fizzBuzzy(10);
 //   console.log(d.b.c);
 //   console.log(a.b.c);
 
-// 6. 배열값 짝수를 빼내서 4곱해서 다 더하기 ⭕️
+// 6. 배열값 짝수를 빼내서 4곱해서 다 더하기 ⭕️⭕️
 
 const items = [1, 2, 3, 4, 5, 6];
 
@@ -107,7 +107,7 @@ const result = items
 
 // maxChar("dgjkdjgkdjglggg5555555");
 
-// 8. 숫자를 반대로 만들기  ***************** ⭕️
+// 8. 숫자를 반대로 만들기  ***************** ⭕️⭕️
 // 500 : -5
 // 12 : 21
 
@@ -132,7 +132,15 @@ const result = items
 // }
 // chunk(num, 3);
 
-//10. 0이 들어간 배열 곱하기
+// ========================> 내가 푼거
+// let array = [];
+// for (let i = 0; i < arr.length; i++) {
+//   array.push(arr.splice(0, n));
+// }
+// console.log([...array, arr]);
+// ========================> 내가 푼거
+
+//10. 0이 들어간 배열 곱하기 ⭕️
 
 // const muli = (...arg) => {
 //   console.log(arg);
@@ -153,7 +161,7 @@ const result = items
 
 // console.log(getDays(date1, date2));
 
-// 13.  모음 찾기 ====================================> */
+// 13.  모음 찾기 ====================================> */⭕️
 // // new Set() : 반복되는것을 빼줌
 // findVowels("abracadabrai");
 
@@ -175,7 +183,7 @@ const result = items
 // console.log(sumUPTo(3));
 
 // write a functions that takes two numbers and returns the sum of
-// those nums
+// those nums⭕️
 
 function add(...number2) {
   console.log(...number2);
@@ -196,7 +204,7 @@ function add(...number2) {
 console.log("add", add(2));
 
 // write a function that takes two strings, A and B
-// and returns wheather B is in A in a case-insensitive way
+// and returns wheather B is in A in a case-insensitive way ⭕️
 
 function stringIncludes(a, b) {
   const lowerCaseA = a.toLowerCase();
@@ -207,7 +215,7 @@ console.log(
 );
 
 // Write a function that takes an arrow of object, and returns on
-// array of the objects 'name' property. only if the properties exists
+// array of the objects 'name' property. only if the properties exists⭕️
 
 function getNames(arr) {
   let names = [];
@@ -231,8 +239,14 @@ console.log(
 );
 
 // Write a function that takes an arrow of numbers and returns
-// the index of the largest number
-function getLargestNumber() {}
+// the index of the largest number ⭕️
+function getLargestNumber() {
+  let largest = arr[0];
+  for (let num of arr) {
+    if (num > largest) largest = num;
+  }
+  return largest;
+}
 console.log(getLargestNumber([7, 1, 4, 12, 9]));
 
 // Write a function that returns a promise that resolves
@@ -273,3 +287,29 @@ function multifly(n) {
 }
 
 console.log(multifly(4));
+
+// Given a positive integer num, return the sum of all odd fibonacci numbers that are less than or equal to num.
+// The first two numbers in the Fibonacci sequenc are 1 and 1,1,3,5
+// For example, sumFib(10) return 10, because odd fibo nums are 1,1,3,5
+
+function sumFib(num) {
+  let a = 1;
+  let b = 1;
+  let sum = a;
+
+  while (b <= num) {
+    if (b % 2 !== 0) {
+      sum += b;
+    }
+    [a, b] = [b, a + b];
+  }
+
+  return sum;
+}
+sumFib(10);
+
+// 1 1 3 5
+//
+// 1 1
+// 1 2
+// 2 3
