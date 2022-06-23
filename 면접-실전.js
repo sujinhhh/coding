@@ -1,13 +1,13 @@
-const QUESTION_URL = "https://jsonplaceholder.typicode.com/users/";
+const QUESTION_URL = "https://jsonplaceholder.typicode.com/todos/1";
 
 {
   /* <div class="category">
   <h2>HTML</h2>
-  <div className="name">
+  <div className="question">
     <h3>Stop watch</h3>
   </div>
-  <div className="name">
-    <h3>question</h3>
+  <div className="question">
+    <h3>Tic tac toe</h3>
   </div>
 </div>; */
 }
@@ -16,6 +16,7 @@ fetchAndAppendQueston();
 
 async function fetchAndAppendQueston() {
   const questions = await fetchingQuestions();
+  console.log(questions);
   const questionsByCategory = getQustionByCategory(questions);
   const wrapper = document.getElementById("wrapper");
   for (const [category, questions] of Object.entries(questionsByCategory)) {
@@ -42,14 +43,18 @@ function createCategory(category, questions) {
   return categoryDiv;
 }
 
+// 1
 async function fetchingQuestions() {
   const response = await fetch(QUESTION_URL);
-  const questions = await response.json();
+  const questions = response.json();
+  // console.log(questions);
   return questions;
 }
 
+// 2
 function getQustionByCategory(questions) {
   const questionsByCategory = {};
+  console.log(questions);
   questions.forEach((question) => {
     if (questionsByCategory.hasOwnProperty(question.name)) {
       questionsByCategory[question.name].push(question.name);

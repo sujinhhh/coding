@@ -259,7 +259,7 @@ function delay(n) {}
   console.log(timeEnd("Testing delay"));
 })();
 
-// flatten the Array
+// flatten the Array ⭕️
 
 let arr = [
   [1, 2],
@@ -313,3 +313,50 @@ sumFib(10);
 // 1 1
 // 1 2
 // 2 3
+
+// Plus One
+
+var plusOne = function (digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] === 9) {
+      digits[i] = 0;
+    } else {
+      digits[i]++;
+      return digits;
+    }
+  }
+  return [1, ...digits];
+};
+
+console.log(plusOne([3, 3]));
+
+var plusOne2 = function (digits) {
+  const fromArray = digits.join(""); // get Digits out of Array
+  const toInt = BigInt(fromArray); //Dont use parseInt, use BigInt instead :)
+  const addOne = toInt + 1n; // add one!
+  const result = Array.from(String(addOne), Number); // return digits to array
+  return result;
+};
+
+// 중복된것 찾기
+
+var intersect = function (nums1, nums2) {
+  const map = new Map();
+  for (const n of nums1) {
+    if (map.has(n)) {
+      map.set(n, map.get(n) + 1);
+    } else {
+      map.set(n, 1);
+    }
+  }
+  map;
+  const result = [];
+  for (const n of nums2) {
+    console.log(map.get(n));
+    if (map.has(n) && map.get(n) > 0) {
+      result.push(n);
+      map.set(n, map.get(n) - 1);
+    }
+  }
+  console.log(result);
+};

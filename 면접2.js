@@ -210,3 +210,12 @@ whatIsInName(
   [{ apple: 1, bat: 2 }, { bat: 1 }, { apple: 1, bat: 2, cookie: 2 }],
   { apple: 1, cookie: 2 }
 );
+
+// Explain Event Delegation
+
+document.querySelector("#products").addEventListener("click", (e) => {
+  console.log(e);
+  if (e.target.nodeName === "LI") {
+    window.location.href = "/" + "#" + e.target.id;
+  }
+});

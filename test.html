@@ -1,44 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .container {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-    }
-    .card {
-      padding: 1em;
-      width: calc(25% -4em -2px);
-      margin-left: 1em;
-      margin-right: 1em;
-      margin-top: 2em;
-    }
-    @media (max-width:500px){
-      .card {
-        width: 100%;
-        color: aquamarine;
-      }
-    }
-    h1 {
-      text-decoration: underline;
-    }
-    .card__description {
-      font-size: 1.5rem;
-      border: 1px solid black;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    }
-  </style>
-</head>
-<body>
-  <div id="container">
-   <input type="text" id="input" tato='yam'> 
-   <button id='click'> Click</button>
-  </div>
-  <script src="test.js"></script>
-</body>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            width: 100vw;
+            height: 48px;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #fff;
+            z-index: 2;
+            background-color: #000;
+            color: #fff;
+        }
+        .red:nth-child(2n) {
+          background-color: red;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            padding-top: 48px;
+        }
+
+        .view1 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: lightgray;
+            color: #000;
+        }
+
+        .view1 > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            color: #fff;
+            margin: 10px;
+        }
+
+        .view2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            background-color: darkblue;
+            color: #fff;
+        }
+    </style>
+    <script defer src="test.js"></script>
+    <!-- <script defer src="./면접-실전.js"></script> -->
+  </head>
+  <body>
+    <div class="category">
+      <h2>HTML</h2>
+      <div className="question">
+        <h3>Stop watch</h3>
+      </div>
+      <div className="question">
+        <h3>Tic tac toe</h3>
+      </div>
+    </div>
 </html>
